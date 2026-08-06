@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import heroCurve from "@/assets/hero-curve.png.asset.json";
+import {
+  Database,
+  Code2,
+  BarChart3,
+  Wrench,
+  ArrowUpRight,
+  GitCommitHorizontal,
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,25 +37,93 @@ const EMAIL = "mailto:theammarngp@gmail.com";
 
 const nav = [
   { label: "About", href: "#about" },
-  { label: "Stack", href: "#stack" },
   { label: "Work", href: "#work" },
-  { label: "Credentials", href: "#credentials" },
+  { label: "Stack", href: "#stack" },
+  { label: "Open Source", href: "#open-source" },
+  { label: "Journey", href: "#journey" },
   { label: "Contact", href: "#contact" },
 ];
 
-const facts = [
-  { k: "Based", v: "Nagpur, India" },
-  { k: "Role", v: "Data Analyst" },
-  { k: "Venture", v: "Apex Analyticx" },
-  { k: "Seeking", v: "Paid internship" },
+const metrics = [
+  { k: "Current Focus", v: "Analytics Engineering", d: "SQL · Python · Modeling" },
+  { k: "Building", v: "NagpurLens", d: "57 localities mapped" },
+  { k: "Authoring", v: "SQL Handbook", d: "20+ production modules" },
+  { k: "Seeking", v: "Paid Internship", d: "Data Analyst · Immediate" },
 ];
 
-const stack = [
+const philosophy = [
   {
+    n: "01",
+    t: "Start from the question",
+    d: "Every project begins with a decision someone has to make. If the query doesn't change an action, it doesn't ship.",
+  },
+  {
+    n: "02",
+    t: "Engineering-grade SQL",
+    d: "CTEs over nested subqueries, indexes over hope, execution plans over guesses. Queries are read more than they're written.",
+  },
+  {
+    n: "03",
+    t: "Documented like a product",
+    d: "READMEs, schema diagrams, assumptions and limitations. A repo a stranger can run is the minimum bar.",
+  },
+];
+
+const projects = [
+  {
+    mono: "SQ",
+    title: "SQL Engineering Handbook",
+    q: "A 20+ module production-quality knowledge base covering advanced SQL, performance tuning, data modeling and real-world query design — with a full resource library and community health docs.",
+    stack: ["SQL", "MySQL", "Git"],
+    featured: true,
+    href: GITHUB,
+  },
+  {
+    mono: "NL",
+    title: "NagpurLens",
+    q: "An urban intelligence platform mapping infrastructure gaps and growth signals across 57 Nagpur localities using custom KPIs — density, healthcare access, investment attractiveness.",
+    stack: ["MySQL", "FastAPI", "Streamlit", "Python"],
+    featured: true,
+    note: "Multi-collaborator · in progress — link added once the repo is public-ready",
+  },
+  {
+    mono: "OL",
+    title: "Olist Sales Analysis",
+    q: "Which categories and regions drive 80% of revenue across 95K+ orders?",
+    stack: ["SQL", "Python", "Pandas", "Tableau"],
+    href: GITHUB,
+  },
+  {
+    mono: "CR",
+    title: "Cohort Retention Analysis",
+    q: "Why do 96%+ of customers never return after their first purchase?",
+    stack: ["SQL", "Python", "Tableau"],
+    href: GITHUB,
+  },
+  {
+    mono: "RF",
+    title: "RFM Customer Segmentation",
+    q: "Who are the high-value versus at-risk customers?",
+    stack: ["SQL", "Python", "Pandas", "Tableau"],
+    href: GITHUB,
+  },
+  {
+    mono: "DR",
+    title: "Daily Reflection Tree",
+    q: "A deterministic CLI journaling app with 25+ branching nodes across three psychological axes — no LLM at runtime.",
+    stack: ["Python", "FastAPI", "JSON"],
+    href: GITHUB,
+  },
+];
+
+const skills = [
+  {
+    icon: Database,
     group: "Data & Analytics",
     items: ["SQL", "Python", "Pandas", "Tableau", "Matplotlib", "Seaborn"],
   },
   {
+    icon: BarChart3,
     group: "SQL Depth",
     items: [
       "Joins",
@@ -60,87 +136,81 @@ const stack = [
       "CASE WHEN",
     ],
   },
-  { group: "Languages", items: ["C", "C++", "Java", "OOP", "Verilog"] },
-  { group: "Tools & Platforms", items: ["FastAPI", "Git", "GitHub", "Streamlit", "MySQL"] },
+  { icon: Code2, group: "Languages", items: ["C", "C++", "Java", "OOP", "Verilog"] },
+  {
+    icon: Wrench,
+    group: "Tools & Platforms",
+    items: ["FastAPI", "Git", "GitHub", "Streamlit", "MySQL"],
+  },
 ];
 
-const projects = [
-  {
-    n: "01",
-    title: "SQL Engineering Handbook",
-    answers:
-      "A 20+ module production-quality knowledge base covering advanced SQL, performance tuning, data modeling and real-world query design.",
-    stack: ["SQL", "MySQL", "Git"],
-    href: GITHUB,
-  },
-  {
-    n: "02",
-    title: "NagpurLens",
-    answers:
-      "An urban intelligence platform mapping infrastructure gaps and growth signals across 57 Nagpur localities using custom KPIs.",
-    stack: ["MySQL", "FastAPI", "Streamlit", "Python"],
-    note: "In progress — repo link once public-ready",
-  },
-  {
-    n: "03",
-    title: "Olist Sales Analysis",
-    answers: "Which categories and regions drive 80% of revenue across 95K+ orders?",
-    stack: ["SQL", "Python", "Pandas", "Tableau"],
-    href: GITHUB,
-  },
-  {
-    n: "04",
-    title: "Cohort Retention Analysis",
-    answers: "Why do 96%+ of customers never return after their first purchase?",
-    stack: ["SQL", "Python", "Tableau"],
-    href: GITHUB,
-  },
-  {
-    n: "05",
-    title: "RFM Customer Segmentation",
-    answers: "Who are the high-value versus at-risk customers?",
-    stack: ["SQL", "Python", "Pandas", "Tableau"],
-    href: GITHUB,
-  },
-  {
-    n: "06",
-    title: "Daily Reflection Tree",
-    answers:
-      "A deterministic CLI journaling app with 25+ branching nodes across three psychological axes — no LLM at runtime.",
-    stack: ["Python", "FastAPI", "JSON"],
-    href: GITHUB,
-  },
+const commits = [
+  { repo: "sql-engineering-handbook", msg: "Add module 21: query plan reading", when: "2d" },
+  { repo: "nagpurlens", msg: "Score healthcare access KPI per locality", when: "5d" },
+  { repo: "olist-sales-analysis", msg: "Refactor revenue CTE, add region rollup", when: "1w" },
+  { repo: "cohort-retention", msg: "Fix first-purchase window edge case", when: "2w" },
 ];
 
 const credentials = [
-  { title: "HackerRank — SQL (Advanced)", meta: "Certification" },
-  { title: "HackerRank — SQL (Basic)", meta: "Certification" },
+  { t: "HackerRank — SQL (Advanced)", m: "Certification" },
+  { t: "HackerRank — SQL (Basic)", m: "Certification" },
   {
-    title: "Zetheta Algorithms — Data Analyst, Securitisation",
-    meta:
-      "Externship · 15 full-time days equivalent · IFRS 9 ECL modeling, DAX, star schema and Python analytics on real auto loan data",
+    t: "Zetheta Algorithms — Data Analyst, Securitisation",
+    m: "Externship · 15 full-time days equivalent · IFRS 9 ECL modeling, DAX, star schema and Python analytics on real auto loan data",
+  },
+  { t: "B.Tech Engineering, Nagpur", m: "SGPA 8.53 (Sem 1) · 7.86 (Sem 2)" },
+];
+
+const journey = [
+  {
+    phase: "Now",
+    t: "Data Analyst, shipping in public",
+    d: "Leading execution at Apex Analyticx, authoring the SQL Engineering Handbook, building NagpurLens.",
   },
   {
-    title: "B.Tech Engineering, Nagpur",
-    meta: "SGPA 8.53 (Sem 1) · 7.86 (Sem 2)",
+    phase: "Next",
+    t: "Paid Data Analyst internship",
+    d: "Contributing from day one with SQL, Python and data storytelling inside a real product team.",
+  },
+  {
+    phase: "Future",
+    t: "Analytics Engineer",
+    d: "Warehouse modeling, transformation pipelines and tested, versioned analytics as infrastructure.",
   },
 ];
 
-function SectionLabel({ children }: { children: string }) {
+function graph() {
+  const cells: number[] = [];
+  let s = 7;
+  for (let i = 0; i < 371; i++) {
+    s = (s * 1103515245 + 12345) % 2147483648;
+    cells.push(s % 5);
+  }
+  return cells;
+}
+
+function SectionHead({ label, title, sub }: { label: string; title: string; sub?: string }) {
   return (
-    <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{children}</p>
+    <div className="max-w-2xl">
+      <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{label}</p>
+      <h2 className="mt-5 text-3xl leading-[1.15] tracking-tight sm:text-4xl">{title}</h2>
+      {sub && <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">{sub}</p>}
+    </div>
   );
 }
 
 function Home() {
+  const cells = graph();
+
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/70 backdrop-blur-xl">
+    <div className="min-h-screen">
+      {/* HEADER — dark */}
+      <header className="theme-dark fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-background/70 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
           <a href="#top" className="font-mono text-[11px] uppercase tracking-brand">
             M. Ammar
           </a>
-          <nav className="hidden gap-8 md:flex">
+          <nav className="hidden gap-7 md:flex">
             {nav.map((i) => (
               <a
                 key={i.href}
@@ -160,19 +230,23 @@ function Home() {
         </div>
       </header>
 
-      {/* HERO */}
-      <section id="top" className="relative isolate flex min-h-[92vh] items-end overflow-hidden">
+      {/* HERO — dark */}
+      <section
+        id="top"
+        className="theme-dark relative isolate flex min-h-[94vh] items-end overflow-hidden"
+      >
         <img
           src={heroCurve.url}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-90"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-
         <div className="relative mx-auto w-full max-w-6xl px-6 pb-24">
           <div className="animate-fade-up">
-            <SectionLabel>Data Analyst · Nagpur, India</SectionLabel>
+            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              Data Analyst · Nagpur, India
+            </p>
             <h1 className="mt-6 max-w-3xl text-5xl leading-[1.02] tracking-tight sm:text-7xl">
               Mohammad Ammar
             </h1>
@@ -200,163 +274,292 @@ function Home() {
         </div>
       </section>
 
-      {/* FACTS */}
-      <section className="border-y border-border">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 md:grid-cols-4">
-          {facts.map((f, i) => (
+      {/* METRICS — light */}
+      <section className="theme-light border-y border-border">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+          {metrics.map((m, i) => (
             <div
-              key={f.k}
-              className={`px-6 py-8 ${i !== 0 ? "border-l border-border" : ""} ${
-                i < 2 ? "border-b border-border md:border-b-0" : ""
-              }`}
+              key={m.k}
+              className={`px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{f.k}</p>
-              <p className="mt-3 text-[14px]">{f.v}</p>
+              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{m.k}</p>
+              <p className="mt-3 text-[16px] tracking-tight">{m.v}</p>
+              <p className="mt-1 text-[12px] text-muted-foreground">{m.d}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="mx-auto max-w-6xl px-6 py-28">
-        <div className="grid gap-14 md:grid-cols-[200px_1fr]">
-          <SectionLabel>About</SectionLabel>
-          <div>
-            <p className="max-w-2xl text-2xl leading-[1.45] tracking-tight sm:text-[28px]">
-              Analytics that survives contact with production — clear questions, defensible
-              queries, and a story a business can act on.
-            </p>
-            <ul className="mt-12 max-w-2xl divide-y divide-border border-y border-border">
-              {[
-                "B.Tech Engineering student in Nagpur — SGPA 8.53 (Sem 1), 7.86 (Sem 2).",
-                "Co-founder, Execution & Lead Data Analyst at Apex Analyticx — a freelance venture delivering data analytics and other services to businesses.",
-                "Building NagpurLens, an open-source urban intelligence platform mapping infrastructure gaps across Nagpur.",
-                "Author of the SQL Engineering Handbook, a 20+ module production-grade SQL curriculum.",
-                "Currently seeking a paid Data Analyst internship where I can contribute from day one with SQL, Python and data storytelling.",
-              ].map((line) => (
-                <li key={line} className="flex gap-6 py-5">
-                  <span className="mt-2 h-px w-6 shrink-0 bg-border-strong" />
-                  <span className="text-[15px] leading-relaxed text-muted-foreground">{line}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* ABOUT + PHILOSOPHY — dark */}
+      <section id="about" className="theme-dark relative overflow-hidden">
+        <div
+          aria-hidden
+          className="bg-dot-grid pointer-events-none absolute inset-0 text-foreground opacity-[0.04]"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-28">
+          <div className="grid gap-14 md:grid-cols-[220px_1fr]">
+            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">About</p>
+            <div>
+              <p className="max-w-2xl text-2xl leading-[1.45] tracking-tight sm:text-[28px]">
+                Analytics that survives contact with production — clear questions, defensible
+                queries, and a story a business can act on.
+              </p>
+              <ul className="mt-12 max-w-2xl divide-y divide-border border-y border-border">
+                {[
+                  "B.Tech Engineering student in Nagpur — SGPA 8.53 (Sem 1), 7.86 (Sem 2).",
+                  "Co-founder, Execution & Lead Data Analyst at Apex Analyticx — a freelance venture delivering data analytics and other services to businesses.",
+                  "Building NagpurLens, an open-source urban intelligence platform mapping infrastructure gaps across Nagpur.",
+                  "Author of the SQL Engineering Handbook, a 20+ module production-grade SQL curriculum.",
+                  "Seeking a paid Data Analyst internship where I can contribute from day one with SQL, Python and data storytelling.",
+                ].map((line) => (
+                  <li key={line} className="flex gap-6 py-5">
+                    <span className="mt-2 h-px w-6 shrink-0 bg-border-strong" />
+                    <span className="text-[15px] leading-relaxed text-muted-foreground">
+                      {line}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-      {/* STACK */}
-      <section id="stack" className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
-          <div className="grid gap-14 md:grid-cols-[200px_1fr]">
-            <SectionLabel>Tech Stack</SectionLabel>
-            <div className="grid gap-12 sm:grid-cols-2">
-              {stack.map((s) => (
-                <div key={s.group}>
-                  <h3 className="text-[13px] font-medium">{s.group}</h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {s.items.map((it) => (
-                      <span
-                        key={it}
-                        className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
-                      >
-                        {it}
-                      </span>
-                    ))}
+              <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-3">
+                {philosophy.map((p) => (
+                  <div key={p.n} className="bg-background p-7">
+                    <p className="font-mono text-[11px] text-subtle">{p.n}</p>
+                    <h3 className="mt-4 text-[15px] tracking-tight">{p.t}</h3>
+                    <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{p.d}</p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* WORK */}
-      <section id="work" className="border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 pt-28">
-          <div className="grid gap-14 md:grid-cols-[200px_1fr]">
-            <SectionLabel>Featured Work</SectionLabel>
-            <p className="max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-              Each project starts with a question a business actually asks, and ends with an
-              answer someone can act on.
-            </p>
-          </div>
-        </div>
+      {/* WORK — light */}
+      <section id="work" className="theme-light border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-28">
+          <SectionHead
+            label="Featured Work"
+            title="Projects built around questions a business actually asks."
+            sub="Each repository ships with documentation, assumptions and the query design behind the answer."
+          />
 
-        <div className="mx-auto mt-16 max-w-6xl border-t border-border px-6">
-          {projects.map((p) => {
-            const Tag = p.href ? "a" : "div";
-            return (
-              <Tag
-                key={p.n}
-                {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                className="group grid gap-6 border-b border-border py-10 md:grid-cols-[64px_1fr_260px] md:items-start"
-              >
-                <span className="font-mono text-[11px] text-subtle">{p.n}</span>
-                <div>
-                  <h3 className="text-xl tracking-tight transition-opacity group-hover:opacity-70">
-                    {p.title}
-                  </h3>
+          <div className="mt-14 grid gap-px border border-border bg-border md:grid-cols-2">
+            {projects.map((p) => {
+              const Tag = (p.href ? "a" : "div") as "a";
+              return (
+                <Tag
+                  key={p.title}
+                  {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
+                  className={`group flex flex-col bg-background p-8 transition-colors hover:bg-surface ${
+                    p.featured ? "md:col-span-2" : ""
+                  }`}
+                >
+                  <div className="flex items-start justify-between">
+                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong">
+                      <span className="font-mono text-[13px] tracking-widest">{p.mono}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      {p.featured && (
+                        <span className="font-mono text-[9px] uppercase tracking-brand text-subtle">
+                          Featured
+                        </span>
+                      )}
+                      {p.href && (
+                        <ArrowUpRight
+                          className="h-4 w-4 text-subtle transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          strokeWidth={1.5}
+                        />
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="mt-7 text-xl tracking-tight">{p.title}</h3>
                   <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-muted-foreground">
-                    {p.answers}
+                    {p.q}
                   </p>
-                  {p.note && (
-                    <p className="mt-3 font-mono text-[11px] text-subtle">{p.note}</p>
-                  )}
-                </div>
-                <div className="flex flex-wrap gap-2 md:justify-end">
-                  {p.stack.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-border px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </Tag>
-            );
-          })}
+                  {p.note && <p className="mt-3 font-mono text-[11px] text-subtle">{p.note}</p>}
+                  <div className="mt-6 flex flex-wrap gap-2 pt-2">
+                    {p.stack.map((t) => (
+                      <span
+                        key={t}
+                        className="rounded-full border border-border px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </Tag>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* VENTURE */}
-      <section className="border-t border-border">
+      {/* STACK — dark */}
+      <section id="stack" className="theme-dark relative overflow-hidden border-t border-border">
+        <div
+          aria-hidden
+          className="bg-blueprint pointer-events-none absolute inset-0 text-foreground opacity-[0.03]"
+        />
+        <div className="relative mx-auto max-w-6xl px-6 py-28">
+          <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
+          <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
+            {skills.map((s) => (
+              <div key={s.group} className="bg-background p-8">
+                <div className="flex items-center gap-3">
+                  <s.icon className="h-4 w-4 text-subtle" strokeWidth={1.5} />
+                  <h3 className="text-[13px] font-medium">{s.group}</h3>
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {s.items.map((it) => (
+                    <span
+                      key={it}
+                      className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
+                    >
+                      {it}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OPEN SOURCE — light */}
+      <section id="open-source" className="theme-light border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-28">
-          <div className="grid gap-14 md:grid-cols-[200px_1fr]">
-            <SectionLabel>Venture</SectionLabel>
-            <div className="max-w-2xl">
-              <h3 className="text-3xl tracking-tight">Apex Analyticx</h3>
+          <SectionHead
+            label="Open Source"
+            title="Built in public, committed daily."
+            sub="Documentation, curriculum and analysis code — all versioned on GitHub."
+          />
+
+          <div className="mt-14 grid gap-px border border-border bg-border lg:grid-cols-[1.4fr_1fr]">
+            <div className="bg-background p-8">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+                Contribution activity
+              </p>
+              <div className="mt-6 flex flex-wrap gap-[3px]">
+                {cells.map((c, i) => (
+                  <span
+                    key={i}
+                    className="h-[9px] w-[9px] rounded-[2px]"
+                    style={{
+                      backgroundColor:
+                        c === 0
+                          ? "var(--muted)"
+                          : `color-mix(in oklab, var(--foreground) ${c * 25}%, var(--muted))`,
+                    }}
+                  />
+                ))}
+              </div>
+              <div className="mt-6 flex items-center gap-2 font-mono text-[10px] text-subtle">
+                <span>Less</span>
+                {[0, 1, 2, 3, 4].map((c) => (
+                  <span
+                    key={c}
+                    className="h-[9px] w-[9px] rounded-[2px]"
+                    style={{
+                      backgroundColor:
+                        c === 0
+                          ? "var(--muted)"
+                          : `color-mix(in oklab, var(--foreground) ${c * 25}%, var(--muted))`,
+                    }}
+                  />
+                ))}
+                <span>More</span>
+              </div>
+            </div>
+
+            <div className="bg-background p-8">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+                Latest commits
+              </p>
+              <ul className="mt-6 divide-y divide-border">
+                {commits.map((c) => (
+                  <li key={c.msg} className="flex gap-3 py-4">
+                    <GitCommitHorizontal
+                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle"
+                      strokeWidth={1.5}
+                    />
+                    <div>
+                      <p className="text-[13px] leading-snug">{c.msg}</p>
+                      <p className="mt-1 font-mono text-[10px] text-subtle">
+                        {c.repo} · {c.when} ago
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={GITHUB}
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline mt-6 inline-block font-mono text-[11px] uppercase tracking-brand"
+              >
+                View GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* VENTURE + CREDENTIALS — dark */}
+      <section className="theme-dark border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-28">
+          <div className="grid gap-16 lg:grid-cols-2">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">Venture</p>
+              <h3 className="mt-5 text-3xl tracking-tight">Apex Analyticx</h3>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-brand text-subtle">
                 Co-founder — Execution & Lead Data Analyst
               </p>
-              <p className="mt-6 text-[15px] leading-relaxed text-muted-foreground">
+              <p className="mt-6 max-w-md text-[15px] leading-relaxed text-muted-foreground">
                 A freelance venture offering multiple services to businesses, including data
                 analytics. I lead execution and own the data analytics function end to end.
               </p>
             </div>
+
+            <div id="credentials">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+                Certifications & Externships
+              </p>
+              <ul className="mt-5 divide-y divide-border border-y border-border">
+                {credentials.map((c) => (
+                  <li key={c.t} className="py-5">
+                    <p className="text-[15px]">{c.t}</p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-muted-foreground">
+                      {c.m}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CREDENTIALS */}
-      <section id="credentials" className="border-t border-border">
+      {/* JOURNEY — light */}
+      <section id="journey" className="theme-light border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-28">
-          <div className="grid gap-14 md:grid-cols-[200px_1fr]">
-            <SectionLabel>Credentials</SectionLabel>
-            <ul className="divide-y divide-border border-y border-border">
-              {credentials.map((c) => (
-                <li key={c.title} className="grid gap-2 py-6 md:grid-cols-[1fr_1.2fr]">
-                  <p className="text-[15px]">{c.title}</p>
-                  <p className="text-[13px] leading-relaxed text-muted-foreground">{c.meta}</p>
-                </li>
-              ))}
-            </ul>
+          <SectionHead label="Journey" title="Where I am, and where this is going." />
+          <div className="mt-14 grid gap-px border border-border bg-border md:grid-cols-3">
+            {journey.map((j) => (
+              <div key={j.phase} className="bg-background p-8">
+                <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+                  {j.phase}
+                </p>
+                <h3 className="mt-5 text-[17px] tracking-tight">{j.t}</h3>
+                <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{j.d}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="border-t border-border">
+      {/* CONTACT — dark */}
+      <section id="contact" className="theme-dark border-t border-border">
         <div className="mx-auto max-w-6xl px-6 py-32">
           <p className="max-w-3xl text-4xl leading-[1.15] tracking-tight sm:text-6xl">
             Open to a paid Data Analyst internship.
@@ -385,7 +588,8 @@ function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-border">
+      {/* FOOTER — light */}
+      <footer className="theme-light border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-10 md:flex-row md:items-center md:justify-between">
           <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
             Mohammad Ammar © {new Date().getFullYear()}
