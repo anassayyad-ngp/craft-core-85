@@ -687,12 +687,12 @@ function EngineeringDiagram() {
           <path d="M200 360 L200 430" />
         </g>
         {/* accent connection */}
-        <path d="M200 90 L200 340" stroke="#2563eb" strokeWidth="1.25" strokeDasharray="3 4" />
+        <path d="M200 90 L200 340" stroke="#111827" strokeWidth="1.25" strokeDasharray="3 4" />
 
         {/* Source node (top) */}
         <g transform="translate(160,50)">
           <rect width="80" height="40" rx="6" fill="#ffffff" stroke="#e5e7eb" />
-          <ellipse cx="40" cy="12" rx="20" ry="4" fill="#eff6ff" stroke="#2563eb" strokeWidth="0.75" />
+          <ellipse cx="40" cy="12" rx="20" ry="4" fill="#f3f4f6" stroke="#111827" strokeWidth="0.75" />
           <text x="40" y="26" textAnchor="middle" fontSize="9" fontFamily="ui-monospace" fill="#111827">source</text>
           <text x="40" y="35" textAnchor="middle" fontSize="7" fontFamily="ui-monospace" fill="#6b7280">raw.csv</text>
         </g>
@@ -711,9 +711,9 @@ function EngineeringDiagram() {
 
         {/* Mart node */}
         <g transform="translate(140,340)">
-          <rect width="120" height="44" rx="6" fill="#eff6ff" stroke="#2563eb" />
-          <text x="60" y="20" textAnchor="middle" fontSize="10" fontFamily="ui-monospace" fill="#2563eb" fontWeight="600">mart_revenue</text>
-          <text x="60" y="34" textAnchor="middle" fontSize="7" fontFamily="ui-monospace" fill="#2563eb">fact · daily</text>
+          <rect width="120" height="44" rx="6" fill="#f3f4f6" stroke="#111827" />
+          <text x="60" y="20" textAnchor="middle" fontSize="10" fontFamily="ui-monospace" fill="#111827" fontWeight="600">mart_revenue</text>
+          <text x="60" y="34" textAnchor="middle" fontSize="7" fontFamily="ui-monospace" fill="#111827">fact · daily</text>
         </g>
 
         {/* Chart panel */}
@@ -721,10 +721,10 @@ function EngineeringDiagram() {
           <rect width="160" height="50" rx="6" fill="#ffffff" stroke="#e5e7eb" />
           <polyline
             points="10,40 30,32 50,36 70,22 90,26 110,14 130,18 150,10"
-            stroke="#2563eb" strokeWidth="1.25" fill="none"
+            stroke="#111827" strokeWidth="1.25" fill="none"
           />
           {[10, 30, 50, 70, 90, 110, 130, 150].map((x, i) => (
-            <circle key={i} cx={x} cy={[40, 32, 36, 22, 26, 14, 18, 10][i]} r="1.5" fill="#2563eb" />
+            <circle key={i} cx={x} cy={[40, 32, 36, 22, 26, 14, 18, 10][i]} r="1.5" fill="#111827" />
           ))}
           <line x1="10" y1="44" x2="150" y2="44" stroke="#e5e7eb" />
         </g>
