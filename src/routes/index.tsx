@@ -274,7 +274,7 @@ function Home() {
       {/* HERO — dark */}
       <section
         id="top"
-        className="theme-dark relative isolate flex min-h-[94vh] items-end overflow-hidden"
+        className="theme-dark relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden"
       >
         <img
           src={heroCurve.url}
@@ -282,38 +282,49 @@ function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24">
-          <div className="animate-fade-up">
-            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
-              Data Analyst · Nagpur, India
-            </p>
-            <h1 className="mt-6 max-w-3xl text-5xl leading-[1.02] tracking-tight sm:text-7xl">
-              Mohammad Ammar
-            </h1>
-            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-              I build end-to-end analytics — from raw SQL queries to Tableau dashboards — around
-              real business problems, and write curriculum-grade SQL content on the side.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a
-                href="#work"
-                className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-opacity hover:opacity-85"
-              >
-                View work
-              </a>
-              <a
-                href={GITHUB}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-colors hover:bg-accent-soft"
-              >
-                GitHub
-              </a>
-            </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
+          <p
+            className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-subtle"
+            style={{ animationDelay: "60ms" }}
+          >
+            Data Analyst · Nagpur, India
+          </p>
+          <h1
+            className="animate-fade-up mt-6 text-5xl leading-[1.02] tracking-tight sm:text-7xl"
+            style={{ animationDelay: "160ms" }}
+          >
+            Mohammad Ammar
+          </h1>
+          <p
+            className="animate-fade-up mt-6 max-w-xl text-balance text-[15px] leading-relaxed text-muted-foreground"
+            style={{ animationDelay: "280ms" }}
+          >
+            I build end-to-end analytics — from raw SQL queries to Tableau dashboards — around real
+            business problems, and write curriculum-grade SQL content on the side.
+          </p>
+          <div
+            className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-3"
+            style={{ animationDelay: "400ms" }}
+          >
+            <a
+              href="#work"
+              className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
+            >
+              View work
+            </a>
+            <a
+              href={GITHUB}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </section>
+
 
       {/* METRICS — light */}
       <section className="theme-light border-y border-border">
