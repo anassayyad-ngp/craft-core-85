@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import heroCurve from "@/assets/hero-curve.png.asset.json";
+import heroCurve from "@/assets/hero-curve-hq.png.asset.json";
 import {
   Database,
   Code2,
@@ -280,8 +280,9 @@ function Home() {
           src={heroCurve.url}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          className="hero-drift pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
+        <div className="hero-sheen pointer-events-none absolute inset-0" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
           <p
