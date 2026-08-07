@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import heroCurve from "@/assets/hero-curve.png.asset.json";
 import {
   Database,
@@ -8,6 +9,46 @@ import {
   ArrowUpRight,
   GitCommitHorizontal,
 } from "lucide-react";
+
+function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}: {
+  children: ReactNode;
+  delay?: number;
+  className?: string;
+}) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+          io.disconnect();
+        }
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`reveal ${shown ? "is-visible" : ""} ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -233,7 +274,7 @@ function Home() {
       {/* HERO — dark */}
       <section
         id="top"
-        className="theme-dark relative isolate flex min-h-[94vh] items-end overflow-hidden"
+        className="theme-dark relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden"
       >
         <img
           src={heroCurve.url}
@@ -241,38 +282,49 @@ function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        <div className="relative mx-auto w-full max-w-6xl px-6 pb-24">
-          <div className="animate-fade-up">
-            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
-              Data Analyst · Nagpur, India
-            </p>
-            <h1 className="mt-6 max-w-3xl text-5xl leading-[1.02] tracking-tight sm:text-7xl">
-              Mohammad Ammar
-            </h1>
-            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-muted-foreground">
-              I build end-to-end analytics — from raw SQL queries to Tableau dashboards — around
-              real business problems, and write curriculum-grade SQL content on the side.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a
-                href="#work"
-                className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-opacity hover:opacity-85"
-              >
-                View work
-              </a>
-              <a
-                href={GITHUB}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-colors hover:bg-accent-soft"
-              >
-                GitHub
-              </a>
-            </div>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
+        <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
+          <p
+            className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-subtle"
+            style={{ animationDelay: "60ms" }}
+          >
+            Data Analyst · Nagpur, India
+          </p>
+          <h1
+            className="animate-fade-up mt-6 text-5xl leading-[1.02] tracking-tight sm:text-7xl"
+            style={{ animationDelay: "160ms" }}
+          >
+            Mohammad Ammar
+          </h1>
+          <p
+            className="animate-fade-up mt-6 max-w-xl text-balance text-[15px] leading-relaxed text-muted-foreground"
+            style={{ animationDelay: "280ms" }}
+          >
+            I build end-to-end analytics — from raw SQL queries to Tableau dashboards — around real
+            business problems, and write curriculum-grade SQL content on the side.
+          </p>
+          <div
+            className="animate-fade-up mt-10 flex flex-wrap items-center justify-center gap-3"
+            style={{ animationDelay: "400ms" }}
+          >
+            <a
+              href="#work"
+              className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
+            >
+              View work
+            </a>
+            <a
+              href={GITHUB}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              GitHub
+            </a>
           </div>
         </div>
       </section>
+
 
       {/* METRICS — light */}
       <section className="theme-light border-y border-border">
@@ -296,7 +348,7 @@ function Home() {
           aria-hidden
           className="bg-dot-grid pointer-events-none absolute inset-0 text-foreground opacity-[0.04]"
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-14 md:grid-cols-[220px_1fr]">
             <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">About</p>
             <div>
@@ -332,12 +384,12 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* WORK — light */}
       <section id="work" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead
             label="Featured Work"
             title="Projects built around questions a business actually asks."
@@ -392,16 +444,16 @@ function Home() {
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* STACK — dark */}
-      <section id="stack" className="theme-dark relative overflow-hidden border-t border-border">
+      {/* STACK — light */}
+      <section id="stack" className="theme-light relative overflow-hidden border-t border-border">
         <div
           aria-hidden
           className="bg-blueprint pointer-events-none absolute inset-0 text-foreground opacity-[0.03]"
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
@@ -423,12 +475,12 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* OPEN SOURCE — light */}
-      <section id="open-source" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* OPEN SOURCE — dark */}
+      <section id="open-source" className="theme-dark border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead
             label="Open Source"
             title="Built in public, committed daily."
@@ -502,12 +554,12 @@ function Home() {
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* VENTURE + CREDENTIALS — dark */}
-      <section className="theme-dark border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* VENTURE + CREDENTIALS — light */}
+      <section className="theme-light border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">Venture</p>
@@ -537,12 +589,12 @@ function Home() {
               </ul>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* JOURNEY — light */}
-      <section id="journey" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* JOURNEY — dark */}
+      <section id="journey" className="theme-dark border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead label="Journey" title="Where I am, and where this is going." />
           <div className="mt-14 grid gap-px border border-border bg-border md:grid-cols-3">
             {journey.map((j) => (
@@ -555,12 +607,12 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* CONTACT — dark */}
-      <section id="contact" className="theme-dark border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-32">
+      {/* CONTACT — light */}
+      <section id="contact" className="theme-light border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-32">
           <p className="max-w-3xl text-4xl leading-[1.15] tracking-tight sm:text-6xl">
             Open to a paid Data Analyst internship.
           </p>
@@ -585,11 +637,11 @@ function Home() {
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
-      {/* FOOTER — light */}
-      <footer className="theme-light border-t border-border">
+      {/* FOOTER — dark */}
+      <footer className="theme-dark border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-10 md:flex-row md:items-center md:justify-between">
           <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
             Mohammad Ammar © {new Date().getFullYear()}
