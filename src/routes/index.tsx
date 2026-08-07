@@ -479,7 +479,7 @@ function Home() {
       </section>
 
       {/* OPEN SOURCE — dark */}
-      <section id="open-source" className="theme-dark border-t border-border">
+      <section id="open-source" className="theme-light border-t border-border">
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead
             label="Open Source"
@@ -557,8 +557,8 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* VENTURE + CREDENTIALS — light */}
-      <section className="theme-light border-t border-border">
+      {/* VENTURE + CREDENTIALS — dark */}
+      <section className="theme-dark border-t border-border">
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
