@@ -348,7 +348,7 @@ function Home() {
           aria-hidden
           className="bg-dot-grid pointer-events-none absolute inset-0 text-foreground opacity-[0.04]"
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-14 md:grid-cols-[220px_1fr]">
             <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">About</p>
             <div>
@@ -389,7 +389,7 @@ function Home() {
 
       {/* WORK — light */}
       <section id="work" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead
             label="Featured Work"
             title="Projects built around questions a business actually asks."
@@ -447,13 +447,13 @@ function Home() {
         </div>
       </section>
 
-      {/* STACK — dark */}
-      <section id="stack" className="theme-dark relative overflow-hidden border-t border-border">
+      {/* STACK — light */}
+      <section id="stack" className="theme-light relative overflow-hidden border-t border-border">
         <div
           aria-hidden
           className="bg-blueprint pointer-events-none absolute inset-0 text-foreground opacity-[0.03]"
         />
-        <div className="relative mx-auto max-w-6xl px-6 py-28">
+        <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
@@ -478,9 +478,9 @@ function Home() {
         </div>
       </section>
 
-      {/* OPEN SOURCE — light */}
-      <section id="open-source" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* OPEN SOURCE — dark */}
+      <section id="open-source" className="theme-dark border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead
             label="Open Source"
             title="Built in public, committed daily."
@@ -557,9 +557,9 @@ function Home() {
         </div>
       </section>
 
-      {/* VENTURE + CREDENTIALS — dark */}
-      <section className="theme-dark border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* VENTURE + CREDENTIALS — light */}
+      <section className="theme-light border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">Venture</p>
@@ -592,9 +592,9 @@ function Home() {
         </div>
       </section>
 
-      {/* JOURNEY — light */}
-      <section id="journey" className="theme-light border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-28">
+      {/* JOURNEY — dark */}
+      <section id="journey" className="theme-dark border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <SectionHead label="Journey" title="Where I am, and where this is going." />
           <div className="mt-14 grid gap-px border border-border bg-border md:grid-cols-3">
             {journey.map((j) => (
@@ -610,9 +610,9 @@ function Home() {
         </div>
       </section>
 
-      {/* CONTACT — dark */}
-      <section id="contact" className="theme-dark border-t border-border">
-        <div className="mx-auto max-w-6xl px-6 py-32">
+      {/* CONTACT — light */}
+      <section id="contact" className="theme-light border-t border-border">
+        <Reveal className="mx-auto max-w-6xl px-6 py-32">
           <p className="max-w-3xl text-4xl leading-[1.15] tracking-tight sm:text-6xl">
             Open to a paid Data Analyst internship.
           </p>
@@ -640,8 +640,8 @@ function Home() {
         </div>
       </section>
 
-      {/* FOOTER — light */}
-      <footer className="theme-light border-t border-border">
+      {/* FOOTER — dark */}
+      <footer className="theme-dark border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-10 md:flex-row md:items-center md:justify-between">
           <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
             Mohammad Ammar © {new Date().getFullYear()}
