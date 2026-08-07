@@ -147,10 +147,40 @@
   opacity: 1;
   transform: none;
 }
+/* hero — slow cinematic drift + faint light sheen */
+@keyframes hero-drift {
+  0% { transform: scale(1.06) translate3d(0, 0, 0); }
+  50% { transform: scale(1.1) translate3d(-1.2%, -0.8%, 0); }
+  100% { transform: scale(1.06) translate3d(0, 0, 0); }
+}
+.hero-drift {
+  animation: hero-drift 32s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes hero-sheen {
+  0% { opacity: 0.18; transform: translateX(-12%); }
+  50% { opacity: 0.42; transform: translateX(12%); }
+  100% { opacity: 0.18; transform: translateX(-12%); }
+}
+.hero-sheen {
+  background: radial-gradient(
+    60% 40% at 30% 62%,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  animation: hero-sheen 18s ease-in-out infinite;
+  mix-blend-mode: screen;
+  will-change: opacity, transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .hero-drift,
+  .hero-sheen {
+    animation: none;
   }
 }
