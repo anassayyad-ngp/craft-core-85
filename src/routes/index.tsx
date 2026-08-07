@@ -384,7 +384,7 @@ function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* WORK — light */}
@@ -444,7 +444,7 @@ function Home() {
               );
             })}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* STACK — light */}
@@ -475,7 +475,7 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* OPEN SOURCE — dark */}
@@ -554,7 +554,7 @@ function Home() {
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* VENTURE + CREDENTIALS — light */}
@@ -589,7 +589,7 @@ function Home() {
               </ul>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* JOURNEY — dark */}
@@ -607,7 +607,7 @@ function Home() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* CONTACT — light */}
@@ -637,7 +637,7 @@ function Home() {
               </a>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* FOOTER — dark */}
