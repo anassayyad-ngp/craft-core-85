@@ -557,7 +557,7 @@ function Home() {
         </Reveal>
       </section>
 
-      {/* VENTURE + CREDENTIALS — light */}
+      {/* VENTURE + CREDENTIALS — dark */}
       <section className="theme-dark border-t border-border">
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
