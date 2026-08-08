@@ -284,8 +284,9 @@ function Home() {
           className="hero-drift pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
         <div className="hero-sheen pointer-events-none absolute inset-0" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/85 via-background/45 to-background" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_50%_at_50%_45%,rgba(0,0,0,0.55),transparent_75%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(48%_34%_at_50%_46%,rgba(0,0,0,0.45),transparent_72%)]" />
+
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
           <p
             className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-muted-foreground"
