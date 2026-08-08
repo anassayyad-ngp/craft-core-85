@@ -629,25 +629,41 @@ function Home() {
           </p>
           <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground">
             If you're a recruiter — start with the work above. Each project links directly to the
-            repository with full documentation.
+            repository with full documentation. Email is the fastest way to reach me.
           </p>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href={EMAIL}
+              className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
+            >
+              Email me — theammarngp@gmail.com
+            </a>
+            <a
+              href={resumePdf.url}
+              download="Mohammad-Ammar-Resume.pdf"
+              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              Download résumé
+            </a>
+          </div>
           <div className="mt-12 flex flex-wrap gap-8">
             {[
-              { label: "GitHub", href: GITHUB },
-              { label: "LinkedIn", href: LINKEDIN },
-              { label: "Email", href: EMAIL },
+              { label: "GitHub", href: GITHUB, external: true },
+              { label: "LinkedIn", href: LINKEDIN, external: true },
+              { label: "Email", href: EMAIL, external: false },
+              { label: "Résumé", href: resumePdf.url, external: true },
             ].map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                target="_blank"
-                rel="noreferrer"
+                {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="link-underline font-mono text-[12px] uppercase tracking-brand"
               >
                 {l.label}
               </a>
             ))}
           </div>
+
         </Reveal>
       </section>
 
