@@ -276,14 +276,49 @@ function Home() {
         id="top"
         className="theme-dark relative isolate flex min-h-[100svh] items-center justify-center overflow-hidden"
       >
-        <img
-          src={heroCurve.url}
-          alt=""
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
           aria-hidden="true"
-          className="hero-drift pointer-events-none absolute inset-0 h-full w-full object-cover"
-        />
+          className="hero-drift pointer-events-none absolute inset-0 h-full w-full"
+        >
+          <defs>
+            <radialGradient id="redGlow" cx="15%" cy="85%" r="65%">
+              <stop offset="0%" stopColor="#ff0f0f" stopOpacity="1" />
+              <stop offset="25%" stopColor="#cc0000" stopOpacity="0.85" />
+              <stop offset="60%" stopColor="#4d0000" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+            </radialGradient>
+            <linearGradient id="neonEdge" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+              <stop offset="15%" stopColor="#ff6666" stopOpacity="0.95" />
+              <stop offset="65%" stopColor="#ff0000" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#ff0000" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M -100,1150 Q 350,720 1200,610 T 2100,480 L 2100,1200 L -100,1200 Z"
+            fill="url(#redGlow)"
+          />
+          <path
+            d="M -100,1150 Q 350,720 1200,610 T 2100,480"
+            fill="none"
+            stroke="url(#neonEdge)"
+            strokeWidth="7"
+            style={{ filter: "drop-shadow(0px 0px 18px #ff0000)" }}
+          />
+          <path
+            d="M 850,715 Q 1320,545 2050,180"
+            fill="none"
+            stroke="#ff3333"
+            strokeWidth="2.5"
+            strokeOpacity="0.8"
+          />
+        </svg>
         <div className="hero-sheen pointer-events-none absolute inset-0" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
           <p
             className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-subtle"
