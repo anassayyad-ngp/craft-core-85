@@ -669,6 +669,7 @@ function Home() {
               { label: "GitHub", href: GITHUB },
               { label: "LinkedIn", href: LINKEDIN },
               { label: "Email", href: EMAIL },
+              { label: "Resume", href: resumePdf.url },
             ].map((l) => (
               <a
                 key={l.label}
