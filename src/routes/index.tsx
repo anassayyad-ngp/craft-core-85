@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import heroCurve from "@/assets/hero-curve-hq.png.asset.json";
+import heroCurve from "@/assets/hero-curve-3200.png.asset.json";
+import resumePdf from "@/assets/resume.pdf.asset.json";
 import {
   Database,
   Code2,
@@ -283,23 +284,25 @@ function Home() {
           className="hero-drift pointer-events-none absolute inset-0 h-full w-full object-cover"
         />
         <div className="hero-sheen pointer-events-none absolute inset-0" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/80 via-transparent to-background" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(48%_34%_at_50%_46%,rgba(0,0,0,0.45),transparent_72%)]" />
+
         <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center px-6 pt-24 text-center">
           <p
-            className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-subtle"
+            className="animate-fade-up font-mono text-[10px] uppercase tracking-brand text-muted-foreground"
             style={{ animationDelay: "60ms" }}
           >
             Data Analyst · Nagpur, India
           </p>
           <h1
-            className="animate-fade-up mt-6 text-5xl leading-[1.02] tracking-tight sm:text-7xl"
-            style={{ animationDelay: "160ms" }}
+            className="animate-fade-up mt-6 text-5xl leading-[1.02] tracking-tight text-foreground sm:text-7xl"
+            style={{ animationDelay: "160ms", textShadow: "0 2px 30px rgba(0,0,0,0.55)" }}
           >
             Mohammad Ammar
           </h1>
           <p
-            className="animate-fade-up mt-6 max-w-xl text-balance text-[15px] leading-relaxed text-muted-foreground"
-            style={{ animationDelay: "280ms" }}
+            className="animate-fade-up mt-6 max-w-xl text-balance text-[15px] leading-relaxed text-foreground/75"
+            style={{ animationDelay: "280ms", textShadow: "0 1px 18px rgba(0,0,0,0.5)" }}
           >
             I build end-to-end analytics — from raw SQL queries to Tableau dashboards — around real
             business problems, and write curriculum-grade SQL content on the side.
@@ -315,16 +318,24 @@ function Home() {
               View work
             </a>
             <a
+              href={resumePdf.url}
+              download="Mohammad-Ammar-Resume.pdf"
+              className="rounded-full border border-border-strong bg-background/40 px-5 py-2.5 text-[12px] font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              Download résumé
+            </a>
+            <a
               href={GITHUB}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+              className="rounded-full border border-border-strong bg-background/40 px-5 py-2.5 text-[12px] font-medium text-foreground backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
             >
               GitHub
             </a>
           </div>
         </div>
       </section>
+
 
 
       {/* METRICS — light */}
@@ -619,25 +630,41 @@ function Home() {
           </p>
           <p className="mt-6 max-w-lg text-[15px] leading-relaxed text-muted-foreground">
             If you're a recruiter — start with the work above. Each project links directly to the
-            repository with full documentation.
+            repository with full documentation. Email is the fastest way to reach me.
           </p>
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <a
+              href={EMAIL}
+              className="rounded-full bg-accent px-5 py-2.5 text-[12px] font-medium text-accent-foreground transition-all duration-300 hover:-translate-y-0.5 hover:opacity-85"
+            >
+              Email me — theammarngp@gmail.com
+            </a>
+            <a
+              href={resumePdf.url}
+              download="Mohammad-Ammar-Resume.pdf"
+              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              Download résumé
+            </a>
+          </div>
           <div className="mt-12 flex flex-wrap gap-8">
             {[
-              { label: "GitHub", href: GITHUB },
-              { label: "LinkedIn", href: LINKEDIN },
-              { label: "Email", href: EMAIL },
+              { label: "GitHub", href: GITHUB, external: true },
+              { label: "LinkedIn", href: LINKEDIN, external: true },
+              { label: "Email", href: EMAIL, external: false },
+              { label: "Résumé", href: resumePdf.url, external: true },
             ].map((l) => (
               <a
                 key={l.label}
                 href={l.href}
-                target="_blank"
-                rel="noreferrer"
+                {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
                 className="link-underline font-mono text-[12px] uppercase tracking-brand"
               >
                 {l.label}
               </a>
             ))}
           </div>
+
         </Reveal>
       </section>
 
