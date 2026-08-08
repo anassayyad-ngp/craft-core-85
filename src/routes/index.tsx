@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import heroCurve from "@/assets/hero-curve-hq.png.asset.json";
+import heroCurve from "@/assets/hero-curve-3200.png.asset.json";
+import resumePdf from "@/assets/resume.pdf.asset.json";
 import {
   Database,
   Code2,
