@@ -357,6 +357,14 @@ function Home() {
             >
               GitHub
             </a>
+            <a
+              href={resumePdf.url}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-border-strong px-5 py-2.5 text-[12px] font-medium transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-soft"
+            >
+              Resume
+            </a>
           </div>
         </div>
       </section>
