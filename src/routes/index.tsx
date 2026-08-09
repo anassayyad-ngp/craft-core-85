@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
 });
 
 const GITHUB = "https://github.com/theammarngp-makes";
-const LINKEDIN = "https://www.linkedin.com/in/theammarngp";
+const LINKEDIN = "https://www.linkedin.com/in/mohammad-ammar-ngp/";
 const EMAIL = "mailto:theammarngp@gmail.com";
 
 const nav = [
