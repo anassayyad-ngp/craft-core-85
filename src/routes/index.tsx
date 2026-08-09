@@ -501,7 +501,7 @@ function Home() {
 
           <div className="mt-14 grid gap-px border border-border bg-border lg:grid-cols-[1.4fr_1fr]">
             <div className="bg-background p-8">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Contribution activity
               </p>
               <div className="mt-6 flex flex-wrap gap-[3px]">
