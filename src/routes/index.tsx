@@ -537,7 +537,7 @@ function Home() {
             </div>
 
             <div className="bg-background p-8">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Latest commits
               </p>
               <ul className="mt-6 divide-y divide-border">
