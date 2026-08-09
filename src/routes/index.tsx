@@ -447,6 +447,18 @@ function Home() {
                       )}
                     </div>
                   </div>
+                  {p.img && (
+                    <div className="mt-7 overflow-hidden border border-border bg-surface">
+                      <img
+                        src={p.img}
+                        alt={`${p.title} preview`}
+                        loading="lazy"
+                        className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02] ${
+                          p.featured ? "h-56 md:h-72" : "h-44"
+                        }`}
+                      />
+                    </div>
+                  )}
                   <h3 className="mt-7 text-xl tracking-tight">{p.title}</h3>
                   <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-muted-foreground">
                     {p.q}
