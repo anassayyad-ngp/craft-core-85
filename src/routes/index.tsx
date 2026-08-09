@@ -346,7 +346,7 @@ function Home() {
               key={m.k}
               className={`px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{m.k}</p>
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
               <p className="mt-3 text-[16px] tracking-tight">{m.v}</p>
               <p className="mt-1 text-[12px] text-muted-foreground">{m.d}</p>
             </div>
