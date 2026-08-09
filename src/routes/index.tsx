@@ -586,7 +586,7 @@ function Home() {
             </div>
 
             <div id="credentials">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Certifications & Externships
               </p>
               <ul className="mt-5 divide-y divide-border border-y border-border">
