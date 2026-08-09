@@ -108,6 +108,16 @@
   font-family: var(--font-mono);
 }
 
+@utility text-web {
+  color: var(--web);
+}
+@utility bg-web-soft {
+  background-color: var(--accent-soft);
+}
+@utility border-web {
+  border-color: var(--web);
+}
+
 @utility tracking-brand {
   letter-spacing: 0.28em;
 }
