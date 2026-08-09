@@ -74,7 +74,7 @@ export const Route = createFileRoute("/")({
 });
 
 const GITHUB = "https://github.com/theammarngp-makes";
-const LINKEDIN = "https://www.linkedin.com/in/theammarngp";
+const LINKEDIN = "https://www.linkedin.com/in/mohammad-ammar-ngp/";
 const EMAIL = "mailto:theammarngp@gmail.com";
 
 const nav = [
@@ -234,7 +234,7 @@ function graph() {
 function SectionHead({ label, title, sub }: { label: string; title: string; sub?: string }) {
   return (
     <div className="max-w-2xl">
-      <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{label}</p>
+      <p className="font-mono text-[10px] uppercase tracking-brand text-web">{label}</p>
       <h2 className="mt-5 text-3xl leading-[1.15] tracking-tight sm:text-4xl">{title}</h2>
       {sub && <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">{sub}</p>}
     </div>
@@ -346,7 +346,7 @@ function Home() {
               key={m.k}
               className={`px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{m.k}</p>
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
               <p className="mt-3 text-[16px] tracking-tight">{m.v}</p>
               <p className="mt-1 text-[12px] text-muted-foreground">{m.d}</p>
             </div>
@@ -362,7 +362,7 @@ function Home() {
         />
         <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-14 md:grid-cols-[220px_1fr]">
-            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">About</p>
+            <p className="font-mono text-[10px] uppercase tracking-brand text-web">About</p>
             <div>
               <p className="max-w-2xl text-2xl leading-[1.45] tracking-tight sm:text-[28px]">
                 Analytics that survives contact with production — clear questions, defensible
@@ -425,7 +425,7 @@ function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       {p.featured && (
-                        <span className="font-mono text-[9px] uppercase tracking-brand text-subtle">
+                        <span className="font-mono text-[9px] uppercase tracking-brand rounded-full border border-web/30 bg-web-soft px-2 py-0.5 text-web">
                           Featured
                         </span>
                       )}
@@ -501,7 +501,7 @@ function Home() {
 
           <div className="mt-14 grid gap-px border border-border bg-border lg:grid-cols-[1.4fr_1fr]">
             <div className="bg-background p-8">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Contribution activity
               </p>
               <div className="mt-6 flex flex-wrap gap-[3px]">
@@ -537,7 +537,7 @@ function Home() {
             </div>
 
             <div className="bg-background p-8">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Latest commits
               </p>
               <ul className="mt-6 divide-y divide-border">
@@ -574,7 +574,7 @@ function Home() {
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
             <div>
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">Venture</p>
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">Venture</p>
               <h3 className="mt-5 text-3xl tracking-tight">Apex Analyticx</h3>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-brand text-subtle">
                 Co-founder — Execution & Lead Data Analyst
@@ -586,7 +586,7 @@ function Home() {
             </div>
 
             <div id="credentials">
-              <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">
+              <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Certifications & Externships
               </p>
               <ul className="mt-5 divide-y divide-border border-y border-border">
