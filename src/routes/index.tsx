@@ -425,7 +425,7 @@ function Home() {
                     </div>
                     <div className="flex items-center gap-3">
                       {p.featured && (
-                        <span className="font-mono text-[9px] uppercase tracking-brand text-subtle">
+                        <span className="font-mono text-[9px] uppercase tracking-brand rounded-full border border-web/30 bg-web-soft px-2 py-0.5 text-web">
                           Featured
                         </span>
                       )}
