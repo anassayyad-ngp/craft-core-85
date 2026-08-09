@@ -234,7 +234,7 @@ function graph() {
 function SectionHead({ label, title, sub }: { label: string; title: string; sub?: string }) {
   return (
     <div className="max-w-2xl">
-      <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">{label}</p>
+      <p className="font-mono text-[10px] uppercase tracking-brand text-web">{label}</p>
       <h2 className="mt-5 text-3xl leading-[1.15] tracking-tight sm:text-4xl">{title}</h2>
       {sub && <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">{sub}</p>}
     </div>
