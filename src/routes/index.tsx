@@ -2,6 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import heroCurve from "@/assets/hero-curve-3200.png.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
+import imgSql from "@/assets/projects/sql.png.asset.json";
+import imgNagpur from "@/assets/projects/nagpur.png.asset.json";
+import imgOlist from "@/assets/projects/olist.png.asset.json";
+import imgCohort from "@/assets/projects/cohort.png.asset.json";
+import imgRfm from "@/assets/projects/rfm.png.asset.json";
 import {
   Database,
   Code2,
