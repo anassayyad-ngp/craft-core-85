@@ -362,7 +362,7 @@ function Home() {
         />
         <Reveal className="relative mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-14 md:grid-cols-[220px_1fr]">
-            <p className="font-mono text-[10px] uppercase tracking-brand text-subtle">About</p>
+            <p className="font-mono text-[10px] uppercase tracking-brand text-web">About</p>
             <div>
               <p className="max-w-2xl text-2xl leading-[1.45] tracking-tight sm:text-[28px]">
                 Analytics that survives contact with production — clear questions, defensible
