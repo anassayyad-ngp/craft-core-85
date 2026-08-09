@@ -123,7 +123,8 @@ const projects = [
     q: "A 20+ module production-quality knowledge base covering advanced SQL, performance tuning, data modeling and real-world query design — with a full resource library and community health docs.",
     stack: ["SQL", "MySQL", "Git"],
     featured: true,
-    href: GITHUB,
+    img: imgSql.url,
+    href: "https://github.com/theammarngp-makes/SQL-Engineering-Handbook",
   },
   {
     mono: "NL",
@@ -131,6 +132,7 @@ const projects = [
     q: "An urban intelligence platform mapping infrastructure gaps and growth signals across 57 Nagpur localities using custom KPIs — density, healthcare access, investment attractiveness.",
     stack: ["MySQL", "FastAPI", "Streamlit", "Python"],
     featured: true,
+    img: imgNagpur.url,
     note: "Multi-collaborator · in progress — link added once the repo is public-ready",
   },
   {
@@ -138,28 +140,31 @@ const projects = [
     title: "Olist Sales Analysis",
     q: "Which categories and regions drive 80% of revenue across 95K+ orders?",
     stack: ["SQL", "Python", "Pandas", "Tableau"],
-    href: GITHUB,
+    img: imgOlist.url,
+    href: "https://github.com/theammarngp-makes/olist-sales-analysis",
   },
   {
     mono: "CR",
     title: "Cohort Retention Analysis",
     q: "Why do 96%+ of customers never return after their first purchase?",
     stack: ["SQL", "Python", "Tableau"],
-    href: GITHUB,
+    img: imgCohort.url,
+    href: "https://github.com/theammarngp-makes/E-commerce-cohort-retention-analysis",
   },
   {
     mono: "RF",
     title: "RFM Customer Segmentation",
     q: "Who are the high-value versus at-risk customers?",
     stack: ["SQL", "Python", "Pandas", "Tableau"],
-    href: GITHUB,
+    img: imgRfm.url,
+    href: "https://github.com/theammarngp-makes/ecommerce-rfm-customer-segmentation",
   },
   {
     mono: "DR",
     title: "Daily Reflection Tree",
     q: "A deterministic CLI journaling app with 25+ branching nodes across three psychological axes — no LLM at runtime.",
     stack: ["Python", "FastAPI", "JSON"],
-    href: GITHUB,
+    href: "https://github.com/theammarngp-makes/daily-reflection-tree",
   },
 ];
 
