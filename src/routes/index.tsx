@@ -2,11 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import heroCurve from "@/assets/hero-curve-3200.png.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
-import imgSql from "@/assets/projects/sql.png.asset.json";
+import imgSql from "@/assets/projects/sql-banner.png.asset.json";
 import imgNagpur from "@/assets/projects/nagpur.png.asset.json";
 import imgOlist from "@/assets/projects/olist.png.asset.json";
 import imgCohort from "@/assets/projects/cohort.png.asset.json";
 import imgRfm from "@/assets/projects/rfm.png.asset.json";
+import imgDrt from "@/assets/projects/drt.png.asset.json";
 import {
   Database,
   Code2,
@@ -133,7 +134,8 @@ const projects = [
     stack: ["MySQL", "FastAPI", "Streamlit", "Python"],
     featured: true,
     img: imgNagpur.url,
-    note: "Multi-collaborator · in progress — link added once the repo is public-ready",
+    href: "https://github.com/theammarngp-makes/NagpurLens",
+    note: "Multi-collaborator · in progress",
   },
   {
     mono: "OL",
@@ -164,6 +166,7 @@ const projects = [
     title: "Daily Reflection Tree",
     q: "A deterministic CLI journaling app with 25+ branching nodes across three psychological axes — no LLM at runtime.",
     stack: ["Python", "FastAPI", "JSON"],
+    img: imgDrt.url,
     href: "https://github.com/theammarngp-makes/daily-reflection-tree",
   },
 ];
@@ -354,15 +357,20 @@ function Home() {
           {metrics.map((m, i) => (
             <div
               key={m.k}
-              className={`px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
+              className={`group card-lift relative bg-background px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
-              <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
-              <p className="mt-3 text-[16px] tracking-tight">{m.v}</p>
+              <span className="absolute left-0 top-0 h-full w-px rail opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-web transition-transform duration-500 group-hover:scale-150" />
+                <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
+              </div>
+              <p className="mt-3 text-[16px] tracking-tight text-foreground">{m.v}</p>
               <p className="mt-1 text-[12px] text-muted-foreground">{m.d}</p>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* ABOUT + PHILOSOPHY — dark */}
       <section id="about" className="theme-dark relative overflow-hidden">
@@ -386,9 +394,12 @@ function Home() {
                   "Author of the SQL Engineering Handbook, a 20+ module production-grade SQL curriculum.",
                   "Seeking a paid Data Analyst internship where I can contribute from day one with SQL, Python and data storytelling.",
                 ].map((line) => (
-                  <li key={line} className="flex gap-6 py-5">
-                    <span className="mt-2 h-px w-6 shrink-0 bg-border-strong" />
-                    <span className="text-[15px] leading-relaxed text-muted-foreground">
+                  <li
+                    key={line}
+                    className="group flex gap-6 py-5 transition-colors duration-500 hover:bg-surface"
+                  >
+                    <span className="mt-2 h-px w-6 shrink-0 bg-border-strong transition-all duration-500 group-hover:w-10 group-hover:bg-foreground/60" />
+                    <span className="text-[15px] leading-relaxed text-muted-foreground transition-colors duration-500 group-hover:text-foreground/90">
                       {line}
                     </span>
                   </li>
@@ -397,10 +408,13 @@ function Home() {
 
               <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-3">
                 {philosophy.map((p) => (
-                  <div key={p.n} className="bg-background p-7">
-                    <p className="font-mono text-[11px] text-subtle">{p.n}</p>
-                    <h3 className="mt-4 text-[15px] tracking-tight">{p.t}</h3>
+                  <div key={p.n} className="card-lift group bg-background p-7">
+                    <p className="font-mono text-[11px] text-subtle transition-colors duration-500 group-hover:text-foreground">
+                      {p.n}
+                    </p>
+                    <h3 className="mt-4 text-[15px] tracking-tight text-foreground">{p.t}</h3>
                     <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{p.d}</p>
+                    <span className="mt-5 block h-px w-8 bg-border-strong transition-all duration-500 group-hover:w-16 group-hover:bg-foreground/50" />
                   </div>
                 ))}
               </div>
@@ -408,6 +422,7 @@ function Home() {
           </div>
         </Reveal>
       </section>
+
 
       {/* WORK — light */}
       <section id="work" className="theme-light border-t border-border">
@@ -425,13 +440,15 @@ function Home() {
                 <Tag
                   key={p.title}
                   {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                  className={`group flex flex-col bg-background p-8 transition-colors hover:bg-surface ${
+                  className={`group card-lift flex flex-col bg-background p-8 ${
                     p.featured ? "md:col-span-2" : ""
                   }`}
                 >
                   <div className="flex items-start justify-between">
-                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong">
-                      <span className="font-mono text-[13px] tracking-widest">{p.mono}</span>
+                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-web group-hover:bg-web-soft">
+                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-web">
+                        {p.mono}
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       {p.featured && (
@@ -468,7 +485,7 @@ function Home() {
                     {p.stack.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-border px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
+                        className="chip rounded-full px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
                       >
                         {t}
                       </span>
@@ -491,16 +508,21 @@ function Home() {
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.group} className="bg-background p-8">
+              <div key={s.group} className="card-lift group bg-background p-8">
                 <div className="flex items-center gap-3">
-                  <s.icon className="h-4 w-4 text-subtle" strokeWidth={1.5} />
-                  <h3 className="text-[13px] font-medium">{s.group}</h3>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-accent-soft transition-colors duration-500 group-hover:border-web">
+                    <s.icon
+                      className="h-4 w-4 text-subtle transition-colors duration-500 group-hover:text-web"
+                      strokeWidth={1.5}
+                    />
+                  </span>
+                  <h3 className="text-[13px] font-medium text-foreground">{s.group}</h3>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {s.items.map((it) => (
                     <span
                       key={it}
-                      className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
+                      className="chip rounded-full px-3 py-1 font-mono text-[11px] text-muted-foreground"
                     >
                       {it}
                     </span>
@@ -511,6 +533,7 @@ function Home() {
           </div>
         </Reveal>
       </section>
+
 
       {/* OPEN SOURCE — dark */}
       <section id="open-source" className="theme-light border-t border-border">
