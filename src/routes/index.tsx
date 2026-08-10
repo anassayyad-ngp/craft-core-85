@@ -2,11 +2,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import heroCurve from "@/assets/hero-curve-3200.png.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
-import imgSql from "@/assets/projects/sql.png.asset.json";
+import imgSql from "@/assets/projects/sql-banner.png.asset.json";
 import imgNagpur from "@/assets/projects/nagpur.png.asset.json";
 import imgOlist from "@/assets/projects/olist.png.asset.json";
 import imgCohort from "@/assets/projects/cohort.png.asset.json";
 import imgRfm from "@/assets/projects/rfm.png.asset.json";
+import imgDrt from "@/assets/projects/drt.png.asset.json";
 import {
   Database,
   Code2,
@@ -133,7 +134,8 @@ const projects = [
     stack: ["MySQL", "FastAPI", "Streamlit", "Python"],
     featured: true,
     img: imgNagpur.url,
-    note: "Multi-collaborator · in progress — link added once the repo is public-ready",
+    href: "https://github.com/theammarngp-makes/NagpurLens",
+    note: "Multi-collaborator · in progress",
   },
   {
     mono: "OL",
@@ -164,6 +166,7 @@ const projects = [
     title: "Daily Reflection Tree",
     q: "A deterministic CLI journaling app with 25+ branching nodes across three psychological axes — no LLM at runtime.",
     stack: ["Python", "FastAPI", "JSON"],
+    img: imgDrt.url,
     href: "https://github.com/theammarngp-makes/daily-reflection-tree",
   },
 ];
