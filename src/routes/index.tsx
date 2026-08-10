@@ -485,7 +485,7 @@ function Home() {
                     {p.stack.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-border px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
+                        className="chip rounded-full px-2.5 py-1 font-mono text-[10px] text-muted-foreground"
                       >
                         {t}
                       </span>
@@ -508,16 +508,21 @@ function Home() {
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.group} className="bg-background p-8">
+              <div key={s.group} className="card-lift group bg-background p-8">
                 <div className="flex items-center gap-3">
-                  <s.icon className="h-4 w-4 text-subtle" strokeWidth={1.5} />
-                  <h3 className="text-[13px] font-medium">{s.group}</h3>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-accent-soft transition-colors duration-500 group-hover:border-web">
+                    <s.icon
+                      className="h-4 w-4 text-subtle transition-colors duration-500 group-hover:text-web"
+                      strokeWidth={1.5}
+                    />
+                  </span>
+                  <h3 className="text-[13px] font-medium text-foreground">{s.group}</h3>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {s.items.map((it) => (
                     <span
                       key={it}
-                      className="rounded-full border border-border px-3 py-1 font-mono text-[11px] text-muted-foreground"
+                      className="chip rounded-full px-3 py-1 font-mono text-[11px] text-muted-foreground"
                     >
                       {it}
                     </span>
@@ -528,6 +533,7 @@ function Home() {
           </div>
         </Reveal>
       </section>
+
 
       {/* OPEN SOURCE — dark */}
       <section id="open-source" className="theme-light border-t border-border">
