@@ -440,13 +440,15 @@ function Home() {
                 <Tag
                   key={p.title}
                   {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                  className={`group flex flex-col bg-background p-8 transition-colors hover:bg-surface ${
+                  className={`group card-lift flex flex-col bg-background p-8 ${
                     p.featured ? "md:col-span-2" : ""
                   }`}
                 >
                   <div className="flex items-start justify-between">
-                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong">
-                      <span className="font-mono text-[13px] tracking-widest">{p.mono}</span>
+                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-web group-hover:bg-web-soft">
+                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-web">
+                        {p.mono}
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       {p.featured && (
