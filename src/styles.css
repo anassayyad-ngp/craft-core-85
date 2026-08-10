@@ -127,6 +127,51 @@
   border-top: 1px solid var(--color-border);
 }
 
+/* depth + tactile feedback */
+@utility card-lift {
+  position: relative;
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--foreground) 4%, transparent),
+    0 8px 24px -18px color-mix(in oklab, var(--foreground) 40%, transparent);
+  transition:
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 380ms ease;
+  will-change: transform;
+}
+.card-lift:hover {
+  transform: translateY(-3px);
+  background-color: var(--surface);
+  box-shadow:
+    0 1px 0 color-mix(in oklab, var(--foreground) 6%, transparent),
+    0 22px 44px -26px color-mix(in oklab, var(--foreground) 55%, transparent);
+}
+
+@utility chip {
+  border: 1px solid var(--border);
+  background-color: color-mix(in oklab, var(--surface) 70%, transparent);
+  transition:
+    border-color 260ms ease,
+    color 260ms ease,
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 260ms ease;
+}
+.chip:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  color: var(--foreground);
+  background-color: var(--accent-soft);
+}
+
+@utility rail {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    color-mix(in oklab, var(--foreground) 22%, transparent),
+    transparent
+  );
+}
+
 @utility link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 0% 1px;
