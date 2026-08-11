@@ -347,7 +347,36 @@ function Home() {
             </a>
           </div>
         </div>
+
+        {/* data ticker */}
+        <div className="absolute inset-x-0 bottom-0 border-y border-white/10 bg-black/30 backdrop-blur-sm">
+          <div className="marquee overflow-hidden py-2.5">
+            <div className="marquee-track">
+              {[0, 1].map((dup) => (
+                <div key={dup} className="flex shrink-0 items-center" aria-hidden={dup === 1}>
+                  {[
+                    "SQL MODULES: 20+",
+                    "LOCALITIES MAPPED: 57",
+                    "STATUS: SEEKING INTERNSHIP",
+                    "ACCURACY: 99.8%",
+                    "DASHBOARDS SHIPPED: 12",
+                    "BASE: NAGPUR, IN",
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="flex items-center gap-6 whitespace-nowrap px-6 font-mono text-[10px] uppercase tracking-brand text-white/45"
+                    >
+                      {t}
+                      <span className="h-1 w-1 rounded-full bg-white/25" />
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
+
 
 
 
@@ -357,11 +386,11 @@ function Home() {
           {metrics.map((m, i) => (
             <div
               key={m.k}
-              className={`group card-lift relative bg-background px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
+              className={`group glow-edge relative bg-background px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
               <span className="absolute left-0 top-0 h-full w-px rail opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-web transition-transform duration-500 group-hover:scale-150" />
+                <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-web transition-transform duration-500 group-hover:scale-150" />
                 <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
               </div>
               <p className="mt-3 text-[16px] tracking-tight text-foreground">{m.v}</p>
@@ -408,7 +437,7 @@ function Home() {
 
               <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-3">
                 {philosophy.map((p) => (
-                  <div key={p.n} className="card-lift group bg-background p-7">
+                  <div key={p.n} className="glow-edge group bg-background p-7">
                     <p className="font-mono text-[11px] text-subtle transition-colors duration-500 group-hover:text-foreground">
                       {p.n}
                     </p>
@@ -440,17 +469,17 @@ function Home() {
                 <Tag
                   key={p.title}
                   {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                  className={`group card-lift flex flex-col bg-background p-8 ${
+                  className={`group glow-edge flex w-full min-w-0 flex-col overflow-hidden bg-background p-6 sm:p-8 ${
                     p.featured ? "md:col-span-2" : ""
                   }`}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-web group-hover:bg-web-soft">
-                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-web">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-foreground/40 sm:h-16 sm:w-16">
+                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-foreground">
                         {p.mono}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-3">
                       {p.featured && (
                         <span className="font-mono text-[9px] uppercase tracking-brand rounded-full border border-web/30 bg-web-soft px-2 py-0.5 text-web">
                           Featured
@@ -465,17 +494,16 @@ function Home() {
                     </div>
                   </div>
                   {p.img && (
-                    <div className="mt-7 overflow-hidden border border-border bg-surface">
+                    <div className="mt-7 w-full overflow-hidden border border-border bg-surface">
                       <img
                         src={p.img}
                         alt={`${p.title} preview`}
                         loading="lazy"
-                        className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02] ${
-                          p.featured ? "h-56 md:h-72" : "h-44"
-                        }`}
+                        className="h-auto w-full max-w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       />
                     </div>
                   )}
+
                   <h3 className="mt-7 text-xl tracking-tight">{p.title}</h3>
                   <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-muted-foreground">
                     {p.q}
@@ -508,7 +536,7 @@ function Home() {
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.group} className="card-lift group bg-background p-8">
+              <div key={s.group} className="glow-edge group bg-background p-8">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-accent-soft transition-colors duration-500 group-hover:border-web">
                     <s.icon
