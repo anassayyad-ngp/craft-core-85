@@ -730,7 +730,7 @@ function Home() {
               Download résumé
             </a>
           </div>
-          <div className="mt-12 flex flex-wrap gap-8">
+          <div className="mt-12 flex flex-wrap gap-3">
             {[
               { label: "GitHub", href: GITHUB, external: true },
               { label: "LinkedIn", href: LINKEDIN, external: true },
@@ -741,7 +741,7 @@ function Home() {
                 key={l.label}
                 href={l.href}
                 {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                className="link-underline font-mono text-[12px] uppercase tracking-brand"
+                className="glow-edge rounded-full border border-border-strong bg-background/60 px-5 py-2.5 font-mono text-[11px] uppercase tracking-brand text-foreground backdrop-blur-sm"
               >
                 {l.label}
               </a>
