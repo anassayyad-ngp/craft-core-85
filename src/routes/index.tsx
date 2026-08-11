@@ -355,19 +355,29 @@ function Home() {
               {[0, 1].map((dup) => (
                 <div key={dup} className="flex shrink-0 items-center" aria-hidden={dup === 1}>
                   {[
-                    "SQL MODULES: 20+",
-                    "LOCALITIES MAPPED: 57",
-                    "STATUS: SEEKING INTERNSHIP",
-                    "ACCURACY: 99.8%",
-                    "DASHBOARDS SHIPPED: 12",
-                    "BASE: NAGPUR, IN",
+                    "250.5 MPa",
+                    "Δt: 0.0042s",
+                    "OEE: 98.5%",
+                    "Re: 2100",
+                    "λ: 550nm",
+                    "50.02 mm",
+                    "1013.25 hPa",
+                    "V: 4.98V",
+                    "45.2 L/s",
+                    "E: 200 GPa",
+                    "μ: 0.152",
+                    "7,200 RPM",
+                    "σ: 0.0016",
+                    "T_max: 135.4°C",
+                    "f: 60.02 Hz",
+                    "Z: 50.4 Ω",
                   ].map((t) => (
                     <span
                       key={t}
-                      className="flex items-center gap-6 whitespace-nowrap px-6 font-mono text-[10px] uppercase tracking-brand text-white/45"
+                      className="flex items-center gap-6 whitespace-nowrap px-6 font-mono text-[10px] uppercase tracking-brand text-white/40"
                     >
                       {t}
-                      <span className="h-1 w-1 rounded-full bg-white/25" />
+                      <span className="h-1 w-1 rounded-full bg-white/20" />
                     </span>
                   ))}
                 </div>
@@ -573,7 +583,7 @@ function Home() {
           />
 
           <div className="mt-14 grid gap-px border border-border bg-border lg:grid-cols-[1.4fr_1fr]">
-            <div className="bg-background p-8">
+            <div className="glow-edge group bg-background p-8">
               <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Contribution activity
               </p>
@@ -609,15 +619,18 @@ function Home() {
               </div>
             </div>
 
-            <div className="bg-background p-8">
+            <div className="glow-edge group bg-background p-8">
               <p className="font-mono text-[10px] uppercase tracking-brand text-web">
                 Latest commits
               </p>
               <ul className="mt-6 divide-y divide-border">
                 {commits.map((c) => (
-                  <li key={c.msg} className="flex gap-3 py-4">
+                  <li
+                    key={c.msg}
+                    className="glow-edge group -mx-3 flex gap-3 rounded-md px-3 py-4"
+                  >
                     <GitCommitHorizontal
-                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle transition-colors duration-500 group-hover:text-foreground"
                       strokeWidth={1.5}
                     />
                     <div>
@@ -646,7 +659,7 @@ function Home() {
       <section className="theme-dark border-t border-border">
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
-            <div>
+            <div className="glow-edge group rounded-lg border border-border bg-background/40 p-8">
               <p className="font-mono text-[10px] uppercase tracking-brand text-web">Venture</p>
               <h3 className="mt-5 text-3xl tracking-tight">Apex Analyticx</h3>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-brand text-subtle">
@@ -720,7 +733,7 @@ function Home() {
               Download résumé
             </a>
           </div>
-          <div className="mt-12 flex flex-wrap gap-8">
+          <div className="mt-12 flex flex-wrap gap-3">
             {[
               { label: "GitHub", href: GITHUB, external: true },
               { label: "LinkedIn", href: LINKEDIN, external: true },
@@ -731,7 +744,7 @@ function Home() {
                 key={l.label}
                 href={l.href}
                 {...(l.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                className="link-underline font-mono text-[12px] uppercase tracking-brand"
+                className="glow-edge rounded-full border border-border-strong bg-background/60 px-5 py-2.5 font-mono text-[11px] uppercase tracking-brand text-foreground backdrop-blur-sm"
               >
                 {l.label}
               </a>
