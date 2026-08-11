@@ -659,7 +659,7 @@ function Home() {
       <section className="theme-dark border-t border-border">
         <Reveal className="mx-auto max-w-6xl px-6 py-28">
           <div className="grid gap-16 lg:grid-cols-2">
-            <div>
+            <div className="glow-edge group rounded-lg border border-border bg-background/40 p-8">
               <p className="font-mono text-[10px] uppercase tracking-brand text-web">Venture</p>
               <h3 className="mt-5 text-3xl tracking-tight">Apex Analyticx</h3>
               <p className="mt-3 font-mono text-[11px] uppercase tracking-brand text-subtle">
