@@ -353,7 +353,7 @@ function Home() {
           <div className="marquee overflow-hidden py-2.5">
             <div className="marquee-track">
               {[0, 1].map((dup) => (
-                <div key={dup} className="flex shrink-0items-center" aria-hidden={dup === 1}>
+                <div key={dup} className="flex shrink-0 items-center" aria-hidden={dup === 1}>
                   {[
                     "SQL MODULES: 20+",
                     "LOCALITIES MAPPED: 57",
