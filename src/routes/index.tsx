@@ -469,17 +469,17 @@ function Home() {
                 <Tag
                   key={p.title}
                   {...(p.href ? { href: p.href, target: "_blank", rel: "noreferrer" } : {})}
-                  className={`group card-lift flex flex-col bg-background p-8 ${
+                  className={`group glow-edge flex w-full min-w-0 flex-col overflow-hidden bg-background p-6 sm:p-8 ${
                     p.featured ? "md:col-span-2" : ""
                   }`}
                 >
-                  <div className="flex items-start justify-between">
-                    <div className="flex h-16 w-16 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-web group-hover:bg-web-soft">
-                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-web">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-14 w-14 shrink-0 items-center justify-center border border-border-strong transition-colors duration-500 group-hover:border-foreground/40 sm:h-16 sm:w-16">
+                      <span className="font-mono text-[13px] tracking-widest transition-colors duration-500 group-hover:text-foreground">
                         {p.mono}
                       </span>
                     </div>
-                    <div className="flex items-center gap-3">
+                    <div className="flex shrink-0 items-center gap-3">
                       {p.featured && (
                         <span className="font-mono text-[9px] uppercase tracking-brand rounded-full border border-web/30 bg-web-soft px-2 py-0.5 text-web">
                           Featured
@@ -494,17 +494,16 @@ function Home() {
                     </div>
                   </div>
                   {p.img && (
-                    <div className="mt-7 overflow-hidden border border-border bg-surface">
+                    <div className="mt-7 w-full overflow-hidden border border-border bg-surface">
                       <img
                         src={p.img}
                         alt={`${p.title} preview`}
                         loading="lazy"
-                        className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02] ${
-                          p.featured ? "h-56 md:h-72" : "h-44"
-                        }`}
+                        className="h-auto w-full max-w-full object-contain transition-transform duration-700 group-hover:scale-[1.02]"
                       />
                     </div>
                   )}
+
                   <h3 className="mt-7 text-xl tracking-tight">{p.title}</h3>
                   <p className="mt-3 max-w-xl text-[14px] leading-relaxed text-muted-foreground">
                     {p.q}
