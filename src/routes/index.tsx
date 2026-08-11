@@ -625,9 +625,12 @@ function Home() {
               </p>
               <ul className="mt-6 divide-y divide-border">
                 {commits.map((c) => (
-                  <li key={c.msg} className="flex gap-3 py-4">
+                  <li
+                    key={c.msg}
+                    className="glow-edge group -mx-3 flex gap-3 rounded-md px-3 py-4"
+                  >
                     <GitCommitHorizontal
-                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle transition-colors duration-500 group-hover:text-foreground"
                       strokeWidth={1.5}
                     />
                     <div>
