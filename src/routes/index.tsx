@@ -347,7 +347,36 @@ function Home() {
             </a>
           </div>
         </div>
+
+        {/* data ticker */}
+        <div className="absolute inset-x-0 bottom-0 border-y border-white/10 bg-black/30 backdrop-blur-sm">
+          <div className="marquee overflow-hidden py-2.5">
+            <div className="marquee-track">
+              {[0, 1].map((dup) => (
+                <div key={dup} className="flex shrink-0items-center" aria-hidden={dup === 1}>
+                  {[
+                    "SQL MODULES: 20+",
+                    "LOCALITIES MAPPED: 57",
+                    "STATUS: SEEKING INTERNSHIP",
+                    "ACCURACY: 99.8%",
+                    "DASHBOARDS SHIPPED: 12",
+                    "BASE: NAGPUR, IN",
+                  ].map((t) => (
+                    <span
+                      key={t}
+                      className="flex items-center gap-6 whitespace-nowrap px-6 font-mono text-[10px] uppercase tracking-brand text-white/45"
+                    >
+                      {t}
+                      <span className="h-1 w-1 rounded-full bg-white/25" />
+                    </span>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
+
 
 
 
