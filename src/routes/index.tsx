@@ -386,11 +386,11 @@ function Home() {
           {metrics.map((m, i) => (
             <div
               key={m.k}
-              className={`group card-lift relative bg-background px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
+              className={`group glow-edge relative bg-background px-6 py-9 ${i !== 0 ? "sm:border-l border-border" : ""} border-t border-border first:border-t-0 sm:border-t-0`}
             >
               <span className="absolute left-0 top-0 h-full w-px rail opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-web transition-transform duration-500 group-hover:scale-150" />
+                <span className="pulse-dot h-1.5 w-1.5 rounded-full bg-web transition-transform duration-500 group-hover:scale-150" />
                 <p className="font-mono text-[10px] uppercase tracking-brand text-web">{m.k}</p>
               </div>
               <p className="mt-3 text-[16px] tracking-tight text-foreground">{m.v}</p>
@@ -437,7 +437,7 @@ function Home() {
 
               <div className="mt-16 grid gap-px border border-border bg-border sm:grid-cols-3">
                 {philosophy.map((p) => (
-                  <div key={p.n} className="card-lift group bg-background p-7">
+                  <div key={p.n} className="glow-edge group bg-background p-7">
                     <p className="font-mono text-[11px] text-subtle transition-colors duration-500 group-hover:text-foreground">
                       {p.n}
                     </p>
@@ -536,7 +536,7 @@ function Home() {
           <SectionHead label="Tech Stack" title="Tools I reach for, and how deep each one goes." />
           <div className="mt-14 grid gap-px border border-border bg-border sm:grid-cols-2">
             {skills.map((s) => (
-              <div key={s.group} className="card-lift group bg-background p-8">
+              <div key={s.group} className="glow-edge group bg-background p-8">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-accent-soft transition-colors duration-500 group-hover:border-web">
                     <s.icon
