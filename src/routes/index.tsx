@@ -200,10 +200,22 @@ const skills = [
 ];
 
 const commits = [
-  { repo: "sql-engineering-handbook", msg: "Add module 21: query plan reading", when: "2d" },
-  { repo: "nagpurlens", msg: "Score healthcare access KPI per locality", when: "5d" },
-  { repo: "olist-sales-analysis", msg: "Refactor revenue CTE, add region rollup", when: "1w" },
-  { repo: "cohort-retention", msg: "Fix first-purchase window edge case", when: "2w" },
+  {
+    msg: "01_Fundamentals",
+    href: "https://github.com/theammarngp-makes/SQL-Engineering-Handbook/tree/main/01_Fundamentals",
+  },
+  {
+    msg: "07_Window_Functions",
+    href: "https://github.com/theammarngp-makes/SQL-Engineering-Handbook/tree/main/07_Window_Functions",
+  },
+  {
+    msg: "16_QUERY_OPTIMIZATION",
+    href: "https://github.com/theammarngp-makes/SQL-Engineering-Handbook/tree/main/16_QUERY_OPTIMIZATION",
+  },
+  {
+    msg: "Resources",
+    href: "https://github.com/theammarngp-makes/SQL-Engineering-Handbook/blob/main/Resources",
+  },
 ];
 
 const credentials = [
