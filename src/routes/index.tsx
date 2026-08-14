@@ -633,24 +633,30 @@ function Home() {
 
             <div className="glow-edge group bg-background p-8">
               <p className="font-mono text-[10px] uppercase tracking-brand text-web">
-                Latest commits
+                SQL Handbook modules
               </p>
               <ul className="mt-6 divide-y divide-border">
                 {commits.map((c) => (
-                  <li
-                    key={c.msg}
-                    className="glow-edge group -mx-3 flex gap-3 rounded-md px-3 py-4"
-                  >
-                    <GitCommitHorizontal
-                      className="mt-0.5 h-4 w-4 shrink-0 text-subtle transition-colors duration-500 group-hover:text-foreground"
-                      strokeWidth={1.5}
-                    />
-                    <div>
-                      <p className="text-[13px] leading-snug">{c.msg}</p>
-                      <p className="mt-1 font-mono text-[10px] text-subtle">
-                        {c.repo} · {c.when} ago
-                      </p>
-                    </div>
+                  <li key={c.msg}>
+                    <a
+                      href={c.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="glow-edge group -mx-3 flex gap-3 rounded-md px-3 py-4"
+                    >
+                      <GitCommitHorizontal
+                        className="mt-0.5 h-4 w-4 shrink-0 text-subtle transition-colors duration-500 group-hover:text-foreground"
+                        strokeWidth={1.5}
+                      />
+                      <div>
+                        <p className="text-[13px] leading-snug transition-colors duration-500 group-hover:text-foreground">
+                          {c.msg}
+                        </p>
+                        <p className="mt-1 font-mono text-[10px] text-subtle">
+                          SQL-Engineering-Handbook
+                        </p>
+                      </div>
+                    </a>
                   </li>
                 ))}
               </ul>
